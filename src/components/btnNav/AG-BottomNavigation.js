@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import './AG-BottomNavigation.css';
 import './Grid.css'
-import PropTypes from 'prop-types';
 
 
 class AGBottomNavigation extends Component {
 
     constructor(props){
         super(props);
+        console.log('Bottom Navigation');
 
-        this.numberOfItems = this.props.numberOfItems;
     }
 
     componentWillMount(){

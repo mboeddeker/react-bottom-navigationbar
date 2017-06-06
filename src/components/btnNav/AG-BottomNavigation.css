@@ -1,7 +1,7 @@
 .navigation-wrapper {
     height: 55px;
     width: 100%;
-    background-color: rgba(245, 248, 255, 0.19);
+    background-color: white;
     position: fixed;
     bottom: 0px;
     border: 1px solid rgba(32, 32, 32, 0.19);
@@ -21,6 +21,7 @@
 .AGnavigationitem{
     height: 100%;
     float: left;
+
 }
 
 .navigationImageItem{
@@ -33,7 +34,6 @@
     margin-top: 1px;
 }
 
-
 @media only screen and (min-width: 720px) {
     .navigationbar {
         height: 100%;
@@ -42,6 +42,12 @@
         alignment: center;
         max-width: 600px;
     }
+
+    .AGnavigationitem{
+    height: 100%;
+    float: left;
+
+}
 
 }
 

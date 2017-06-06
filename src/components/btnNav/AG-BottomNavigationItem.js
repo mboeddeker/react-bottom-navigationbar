@@ -2,7 +2,6 @@
  * Created by marvinboddeker on 04.06.17.
  */
 import React, {Component} from 'react';
-import Ink from 'react-ink';
 import FontAwesome from 'react-fontawesome';
 import './AG-BottomNavigation.css';
 import './Grid.css'
@@ -21,7 +20,7 @@ class AGBottomNavigationItem extends Component {
 
     componentWillMount() {
         console.log(this.props.ID);
-        if(this.props.ID != this.props.stateID){
+        if(this.props.ID !== this.props.stateID){
             this.setState({
                 bgColor: '#333333'
             })
@@ -29,7 +28,7 @@ class AGBottomNavigationItem extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(this.props.ID != nextProps.stateID){
+        if(this.props.ID !== nextProps.stateID){
             this.setState({
                 bgColor: '#333333'
             })
@@ -42,31 +41,40 @@ class AGBottomNavigationItem extends Component {
         console.log('NextProps: ',nextProps);
     }
 
+    
+
     render() {
 
         return (
-
+            
             <div
                 className={"AGnavigationitem " + this.props.ag_width}
-                onClick={this.props.onTouchThis}
-            >
-
+                onClick={this.props.onTouchThis} >
+                
                 <FontAwesome
                     className='navigationImageItem'
                     size='2x'
                     name={this.props.icon}
                     style={{color:this.state.bgColor}}/>
-                <p className="ag_itemText">{this.props.itemText}</p>
+                    
+                <p className="ag_itemText" style={{color:this.state.bgColor}}>{this.props.itemText}</p>
+                
             </div>
+            
 
         );
     }
 
-    /*
-     onMouseUp={ this.handleClick.bind(this) }
-     onTouchend={ this.handleClick.bind(this) }
-     */
 
+}
+
+AGBottomNavigationItem.prototypes = {
+    ag_width: PropTypes.string,
+    icon: PropTypes.string.isRequired,
+    itemText: PropTypes.string.isRequired,
+    ID: PropTypes.number.isRequired,
+    stateID: PropTypes.number.isRequired,
+    onTouchThis: PropTypes.func.isRequired
 }
 
 export default AGBottomNavigationItem;
