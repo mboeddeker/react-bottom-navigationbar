@@ -5,7 +5,6 @@ import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
 import './AG-BottomNavigation.css';
 import './Grid.css'
-import {Link} from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 

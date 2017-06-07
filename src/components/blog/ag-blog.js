@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import BlogItem from './ag-blogItem';
+import { Link } from 'react-router-dom';
 import './ag-blog.css';
 import './spinner.css';
 
@@ -25,7 +26,7 @@ class AGBlog extends Component {
         
         this.setState({blogData: data})
       });
-    }, 500)
+    }, 50)
   }
 
   
@@ -37,11 +38,14 @@ class AGBlog extends Component {
           ? (   
             <div>
               {this.state.blogData.posts.map((post) => 
-                    <BlogItem
-                        key={post.id}
-                        headline={post.headline}
-                        image={post.image}
-                        content={post.content}/>
+                  <Link to={'/blog/'+ post.id} key={post.id}>
+                      <div>
+                        <BlogItem
+                          headline={post.headline}
+                          image={post.image}
+                          content={post.content}/>
+                      </div>
+                  </Link>
                 )
               } 
             </div>
