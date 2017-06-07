@@ -5,6 +5,8 @@ import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
 import './AG-BottomNavigation.css';
 import './Grid.css'
+import {Link} from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 
@@ -46,7 +48,7 @@ class AGBottomNavigationItem extends Component {
     render() {
 
         return (
-            
+
             <div
                 className={"AGnavigationitem " + this.props.ag_width}
                 onClick={this.props.onTouchThis} >
@@ -58,9 +60,8 @@ class AGBottomNavigationItem extends Component {
                     style={{color:this.state.bgColor}}/>
                     
                 <p className="ag_itemText" style={{color:this.state.bgColor}}>{this.props.itemText}</p>
-                
             </div>
-            
+
 
         );
     }
@@ -75,6 +76,6 @@ AGBottomNavigationItem.prototypes = {
     ID: PropTypes.number.isRequired,
     stateID: PropTypes.number.isRequired,
     onTouchThis: PropTypes.func.isRequired
-}
+};
 
 export default AGBottomNavigationItem;
